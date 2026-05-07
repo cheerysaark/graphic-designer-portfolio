@@ -41,6 +41,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   transition: background 0.35s ease, color 0.35s ease;
+  overflow-x: hidden;
 }
 
 body[data-theme="light"] {
@@ -156,7 +157,8 @@ img {
   display: flex;
   align-items: center;
   gap: 32px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-link {
@@ -1075,8 +1077,14 @@ a:focus {
   }
 
   .nav-links {
-    overflow-x: auto;
-    max-width: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px 20px;
+    overflow-x: visible;
+  }
+
+  .theme-toggle {
+    align-self: flex-start;
   }
 
   .cv-top,
@@ -1087,15 +1095,24 @@ a:focus {
   .cv-photo {
     max-width: 360px;
   }
+
+  .cv-sheet {
+    padding: 26px;
+  }
+
+  .card,
+  .mockup-card {
+    padding: 18px;
+  }
 }
 
 @media (max-width: 620px) {
   .section {
-    padding: 72px 0;
+    padding: 64px 0;
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 64vh;
   }
 
   .works-grid,
@@ -1105,6 +1122,31 @@ a:focus {
 
   .btn {
     width: 100%;
+  }
+
+  .nav-inner {
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 8px 14px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .page-head {
+    padding-block: 52px 22px;
+  }
+
+  .cv-sheet {
+    padding: 20px;
+    border-radius: 20px;
   }
 
   .cursor-orb {
