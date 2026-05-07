@@ -10,18 +10,11 @@
     event.preventDefault();
 
     const name = form.querySelector("#name");
-    const email = form.querySelector("#email");
+    const service = form.querySelector("#service");
     const message = form.querySelector("#message");
 
-    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+    if (!name.value.trim() || !service.value.trim() || !message.value.trim()) {
       note.textContent = "Please complete all fields before continuing to WhatsApp.";
-      note.style.color = "#f17878";
-      return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-      note.textContent = "Please enter a valid email address.";
       note.style.color = "#f17878";
       return;
     }
@@ -30,7 +23,7 @@
       "Hello Saarkesh,",
       "",
       "Name: " + name.value.trim(),
-      "Email: " + email.value.trim(),
+      "Service Looking For: " + service.value.trim(),
       "Message: " + message.value.trim(),
     ].join("\n");
 

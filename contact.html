@@ -46,12 +46,30 @@
         <div class="container grid grid-2">
           <article class="card reveal">
             <h2 class="section-title">Contact Information</h2>
-            <ul class="contact-list">
-              <li>Email: <a href="mailto:sarkofficial22@gmail.com">sarkofficial22@gmail.com</a></li>
-              <li>WhatsApp: <a href="https://wa.me/94703771851" target="_blank" rel="noopener">+94 70 377 1851</a></li>
-              <li>Phone: <a href="tel:+94703771851">0703771851</a></li>
-              <li>Focus: Graphic design, UI/UX design, and web design</li>
-            </ul>
+            <div class="contact-info">
+              <ul class="contact-list">
+                <li>Email: <a href="mailto:sarkofficial22@gmail.com">sarkofficial22@gmail.com</a></li>
+                <li>WhatsApp: <a href="https://wa.me/94703771851" target="_blank" rel="noopener">+94 70 377 1851</a></li>
+              </ul>
+
+              <div class="info-section">
+                <h3>Availability</h3>
+                <p>Available for Freelance & Remote Work</p>
+              </div>
+
+              <div class="info-section">
+                <h3>Location</h3>
+                <p>Based in: Negombo, Sri Lanka</p>
+              </div>
+
+              <div class="resume-button-container">
+                <a href="resume.pdf" download="Saarkesh-Resume.pdf" class="btn btn-resume">Download Resume</a>
+              </div>
+
+              <div class="premium-ending">
+                <p>"Turning ideas into impactful visuals."</p>
+              </div>
+            </div>
           </article>
 
           <article class="card reveal">
@@ -60,8 +78,18 @@
               <label for="name">Name</label>
               <input id="name" name="name" type="text" required />
 
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
+              <label for="service">What are you looking for?</label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Branding Design">Branding Design</option>
+                <option value="Logo Design">Logo Design</option>
+                <option value="Poster Design">Poster Design</option>
+                <option value="Social Media Design">Social Media Design</option>
+                <option value="Other">Other</option>
+              </select>
 
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="6" required></textarea>
