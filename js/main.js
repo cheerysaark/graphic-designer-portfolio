@@ -75,13 +75,66 @@
   }
 
   const linkPath = window.location.pathname.split("/").pop() || "index.html";
+  const navContainer = document.querySelector(".nav-links");
+  const navCurrentButton = document.querySelector("[data-nav-current]");
   const navLinks = document.querySelectorAll("[data-nav-link]");
+  let activeLabel = "Menu";
+
   navLinks.forEach(function (link) {
     const href = link.getAttribute("href");
     // Handle both "index.html" and "" (when on root)
-    const isCurrentPage = href === linkPath || (linkPath === "index.html" && href === "index.html") || (!linkPath && href === "index.html");
+    const isCurrentPage =
+      href === linkPath ||
+      (linkPath === "index.html" && href === "index.html") ||
+      (!linkPath && href === "index.html");
     if (isCurrentPage) {
       link.classList.add("is-active");
+      activeLabel = link.textContent.trim();
+    }
+
+    link.addEventListener("click", function () {
+      if (navContainer) {
+        navContainer.classList.remove("is-open");
+      }
+      if (navCurrentButton) {
+        navCurrentButton.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  if (navCurrentButton) {
+    navCurrentButton.textContent = activeLabel;
+    navCurrentButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const shouldOpen = !navContainer.classList.contains("is-open");
+      navContainer.classList.toggle("is-open", shouldOpen);
+      navCurrentButton.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    if (!navContainer || !navContainer.classList.contains("is-open")) {
+      return;
+    }
+
+    if (navContainer.contains(event.target)) {
+      return;
+    }
+
+    navContainer.classList.remove("is-open");
+    if (navCurrentButton) {
+      navCurrentButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape" || !navContainer || !navContainer.classList.contains("is-open")) {
+      return;
+    }
+
+    navContainer.classList.remove("is-open");
+    if (navCurrentButton) {
+      navCurrentButton.setAttribute("aria-expanded", "false");
     }
   });
 
