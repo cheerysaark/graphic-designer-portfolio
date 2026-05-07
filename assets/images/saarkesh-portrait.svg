@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Saarkesh portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1e7d6"/>
+      <stop offset="50%" stop-color="#d8c1a3"/>
+      <stop offset="100%" stop-color="#8f7d6b"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6f8fcb"/>
+      <stop offset="100%" stop-color="#3560a7"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="450" cy="330" r="150" fill="#4b382f" opacity="0.12"/>
+  <path d="M236 720c35-118 121-183 214-183s179 65 214 183" fill="url(#shirt)"/>
+  <path d="M340 485c24 37 54 58 110 58s86-21 110-58c-6 110-16 171-110 171s-104-61-110-171z" fill="#f1b69c" opacity="0.95"/>
+  <path d="M282 355c0-95 75-171 168-171s168 76 168 171c0 70-41 131-101 159-18 8-40 12-67 12s-49-4-67-12c-60-28-101-89-101-159z" fill="#f2b895"/>
+  <path d="M285 340c10-106 70-154 165-154s155 48 165 154c-18-16-40-22-62-14-20-35-49-58-103-58s-83 23-103 58c-22-8-44-2-62 14z" fill="#2f251f"/>
+  <path d="M317 330c8-36 25-56 48-61-7 11-11 23-13 37 20-13 44-20 65-20 23 0 46 7 65 20-2-14-6-26-13-37 23 5 40 25 48 61-27-10-45-13-100-13s-73 3-100 13z" fill="#231b16"/>
+  <path d="M336 540c41-12 76-18 114-18s73 6 114 18" fill="none" stroke="#18324f" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+  <path d="M393 441c14 13 31 19 57 19s43-6 57-19" fill="none" stroke="#6b463a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="390" cy="356" r="10" fill="#3d2a22"/>
+  <circle cx="510" cy="356" r="10" fill="#3d2a22"/>
+  <path d="M408 396c22 17 62 17 84 0" fill="none" stroke="#7b4f42" stroke-width="8" stroke-linecap="round"/>
+  <path d="M238 744h424v84H238z" fill="#ffffff" opacity="0.12"/>
+  <text x="450" y="828" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#ffffff" opacity="0.85">Saarkesh</text>
+</svg>

@@ -1,0 +1,412 @@
+================================================================================
+SAARK RAHMAN - GRAPHIC DESIGNER PORTFOLIO
+Usage and Customization Guide
+================================================================================
+
+TABLE OF CONTENTS
+1. Project Overview
+2. File Structure
+3. Getting Started
+4. Customization Guide
+5. Features Overview
+6. Deployment
+7. Browser Support
+8. Troubleshooting
+
+================================================================================
+1. PROJECT OVERVIEW
+================================================================================
+
+This is a premium, fully responsive graphic designer portfolio website built with:
+- HTML5 for semantic structure
+- CSS3 with CSS variables for theming
+- Vanilla JavaScript (no external frameworks)
+- Modern animations and interactions
+
+Portfolio Features:
+  - Multi-page site (6 pages total)
+  - Dark and light theme toggle
+  - Portfolio project filtering by category
+  - Before/after image compare toggles
+  - Smooth page transitions
+  - Parallax hero effects
+  - Magnetic button hover effects
+  - Animated loading screen
+  - Contact form validation
+  - Sticky navigation bar
+  - Mobile-responsive design
+
+================================================================================
+2. FILE STRUCTURE
+================================================================================
+
+graphic-designer-portfolio/
+│
+├── index.html                 # Homepage with hero, about preview, featured projects
+├── about.html                 # Full About Me and skills section
+├── portfolio.html             # Full portfolio with filtering and before/after toggles
+├── services.html              # Services offered
+├── testimonials.html          # Client testimonials section
+├── contact.html               # Contact form and contact information
+│
+├── css/
+│   └── main.css              # All styling, themes, animations, responsive design
+│
+├── js/
+│   ├── main.js               # Global interactions: theme toggle, nav, page transitions
+│   ├── portfolio.js          # Portfolio filtering and before/after compare toggle
+│   └── contact.js            # Contact form validation
+│
+├── assets/                   # Placeholder for images, icons, fonts (currently empty)
+│
+├── README.md                 # Project summary
+└── USAGE_GUIDE.txt          # This file
+
+================================================================================
+3. GETTING STARTED
+================================================================================
+
+Option A: Open Directly in Browser
+  1. Open any HTML file in your web browser
+  2. All features will work immediately
+
+Option B: Run a Local Server (Recommended)
+  1. Open terminal/command prompt
+  2. Navigate to project folder: cd graphic-designer-portfolio
+  3. Run Python server: python -m http.server 5500
+  4. Open browser and go to: http://localhost:5500
+
+Option C: Use VS Code Live Server Extension
+  1. Install "Live Server" extension in VS Code
+  2. Right-click on index.html
+  3. Select "Open with Live Server"
+
+================================================================================
+4. CUSTOMIZATION GUIDE
+================================================================================
+
+A) PERSONAL INFORMATION
+   Location: All HTML files
+
+   - Replace "Saark Rahman" with your name (appears in header, hero, about, footer)
+   - Update email: hello@saarkdesign.com
+   - Update Instagram: @saark.design
+   - Update Behance: saarkstudio
+   - Update LinkedIn: saarkrahman
+   - Update footer social links URLs in footer section
+
+B) PORTFOLIO PROJECTS
+   Location: portfolio.html
+
+   Current structure:
+   - 4 project cards with categories: branding, social, poster, thumbnail
+   - Each project has before/after images with toggle buttons
+   
+   To add projects:
+   1. Copy an article block with class="card reveal"
+   2. Change data-project-category to match a filter type
+   3. Update project title and description
+   4. Replace image URLs in compare-img elements
+   5. Update overlay labels in compare-controls buttons
+
+C) THEME COLORS
+   Location: css/main.css (lines 1-31)
+
+   Dark Mode (default):
+   --bg: #0b0b0a                    (background)
+   --text: #f4efe3                  (text color)
+   --accent: #d6a33f                (primary gold accent)
+   --accent-strong: #f4c76a         (bright gold)
+   --muted: #c7beab                 (secondary text)
+
+   Light Mode:
+   --bg: #f7f4ed                    (light background)
+   --text: #1f1a10                  (dark text)
+   --accent: #b5791f                (dark gold)
+
+   To customize: Replace hex colors in :root and body[data-theme="light"]
+
+D) TYPOGRAPHY
+   Location: css/main.css and HTML <head> font links
+
+   Current fonts (from Google Fonts):
+   - Bebas Neue (headlines, logo)
+   - Poppins (body text)
+   - Montserrat (UI elements)
+
+   To change:
+   1. Update font imports in <head> of HTML files
+   2. Update font-family references in CSS
+
+E) CONTENT SECTIONS
+   About: about.html - Update description and bio
+   Services: services.html - Modify service titles and descriptions
+   Testimonials: testimonials.html - Replace client quotes
+   Contact: contact.html - Update contact details
+
+F) LOGO/BRANDING
+   The "Visual Craft" text in the loader is currently hardcoded in:
+   - Loading screen placeholder
+   - Social links text
+
+   To change branding name: Search "Visual Craft" in all files
+
+================================================================================
+5. FEATURES OVERVIEW
+================================================================================
+
+Interactive Features:
+
+1. THEME TOGGLE
+   - Button in top-right corner
+   - Switches between dark and light modes
+   - Preference saved to browser localStorage
+   - Persists across page reloads
+
+2. STICKY NAVIGATION
+   - Header stays visible while scrolling
+   - Active page link highlighted in gold
+   - Responsive on mobile (stacked layout)
+
+3. PORTFOLIO FILTERING
+   - Filter buttons: All, Brand Identity, Social Campaign, Poster, Thumbnail
+   - Click category to show/hide projects
+   - Filters projects by data-project-category attribute
+
+4. BEFORE/AFTER COMPARE
+   - Each portfolio project has Before/After images
+   - Click buttons to toggle between views
+   - Smooth fade and scale transitions (0.35s)
+
+5. PARALLAX HERO
+   - Mockup cards in hero section respond to mouse movement
+   - Only works on desktop (fine pointer devices)
+   - Creates depth effect with 3D transforms
+
+6. MAGNETIC BUTTONS
+   - Primary buttons follow cursor on hover
+   - Subtle movement effect (8% horizontal, 14% vertical)
+   - Desktop-only feature
+
+7. GLOW PULSE ANIMATION
+   - Primary CTA buttons pulse with glowing shadow
+   - Animation cycle: 2.8s ease-in-out infinite
+
+8. PAGE TRANSITIONS
+   - Smooth animated transition on page navigation
+   - Golden gradient overlay slides up/down
+   - Duration: 380ms total (240ms transition time)
+   - Respects prefers-reduced-motion accessibility setting
+
+9. LOADING SCREEN
+   - Shows "Visual Craft" with animated progress bar
+   - Auto-hides after 1.5 seconds or page load
+   - Smooth opacity/visibility transition
+
+10. SCROLL REVEAL
+    - Sections fade in and slide up as they come into view
+    - Threshold: 18% visibility before triggering
+    - Works on all elements with class="reveal"
+
+11. CURSOR ORB
+    - Golden glow follows cursor (desktop only)
+    - Position updates on mousemove
+    - Hidden on mobile to improve performance
+
+================================================================================
+6. DEPLOYMENT
+================================================================================
+
+GitHub Pages (Free):
+  1. Create GitHub repo named your-username.github.io
+  2. Push all files to main branch
+  3. Visit https://your-username.github.io
+
+Netlify (Free):
+  1. Drag and drop folder to netlify.com/drop
+  2. Or connect GitHub repo for auto-deploy
+  3. Get automatic HTTPS and custom domain
+
+Vercel (Free):
+  1. Sign up at vercel.com
+  2. Import GitHub repo
+  3. Deploy automatically
+
+Self-Hosted Server:
+  1. Upload files via FTP to your web server
+  2. Ensure index.html is in root directory
+  3. Test all links work correctly
+
+================================================================================
+7. BROWSER SUPPORT
+================================================================================
+
+Fully Supported:
+  - Chrome 90+
+  - Firefox 88+
+  - Safari 14+
+  - Edge 90+
+  - iOS Safari 14+
+  - Chrome Android 90+
+
+Graceful Degradation:
+  - Older browsers: Site works without animations
+  - CSS Grid and Flexbox widely supported
+  - Reduced motion: Animations disabled automatically
+
+Desktop Features (Won't show on mobile):
+  - Parallax hero effects
+  - Magnetic button movement
+  - Cursor orb
+  - Some hover effects
+
+================================================================================
+8. TROUBLESHOOTING
+================================================================================
+
+Issue: Images not loading
+  Solution: Replace external URLs (unsplash.com) with local image paths
+  Path format: src="assets/images/project-1-before.jpg"
+
+Issue: Portfolio filtering not working
+  Solution: Ensure all project cards have data-project-category attribute
+  Example: <article data-project-category="branding" ...>
+
+Issue: Theme not persisting
+  Solution: Check browser localStorage is enabled
+   - Open DevTools → Application → Local Storage
+   - Look for "portfolio-theme" key
+
+Issue: Page transitions too slow
+  Solution: Adjust timing in js/main.js (line 240ms)
+  Change: setTimeout(function () { window.location.href = href; }, 240);
+
+Issue: Animations feel jerky on mobile
+  Solution: This is normal. Site uses transform and opacity for performance.
+  Tip: Use hardware acceleration by enabling "prefers-reduced-motion"
+
+Issue: Form validation not working
+  Solution: Ensure form has data-contact-form attribute
+  Ensure input fields have correct IDs (#name, #email, #message)
+
+Issue: Navigation links not highlighting correctly
+  Solution: Ensure nav links have data-nav-link attribute
+  Example: <a data-nav-link href="portfolio.html">Portfolio</a>
+
+Contact Form Testing:
+  1. Open contact.html
+  2. Leave a field empty and click Submit
+  3. Should show error in red text
+  4. Fill all fields and submit
+  5. Should show success in green text
+  6. Form resets after successful submission
+  7. Note: Currently no backend - form resets client-side only
+
+================================================================================
+9. CODE STRUCTURE CONVENTIONS
+================================================================================
+
+HTML:
+  - Semantic HTML5 elements (header, nav, main, footer, section, article)
+  - BEM-style class naming (e.g., .nav-links, .filter-btn)
+  - Data attributes for JavaScript hooks (data-nav-link, data-compare, etc.)
+  - Accessibility attributes (aria-label, role, aria-hidden)
+
+CSS:
+  - CSS custom properties (variables) in :root for theming
+  - Mobile-first responsive approach
+  - Media queries at bottom of file
+  - Consistent 2-space indentation
+  - Animations defined with @keyframes
+
+JavaScript:
+  - IIFE (Immediately Invoked Function Expression) pattern
+  - Event delegation for performance
+  - No external dependencies
+  - Efficient DOM queries (cached in variables)
+  - Descriptive variable naming
+
+Performance Optimizations:
+  - Lazy loading on images (loading="lazy")
+  - Will-change hints on animated elements
+  - Transform-based animations (not position-based)
+  - Debounced/throttled interactions
+  - Prefers-reduced-motion respected
+
+================================================================================
+10. QUICK REFERENCE: How to...
+================================================================================
+
+Change your name everywhere:
+  1. Open all .html files
+  2. Find and replace "Saark Rahman"
+  3. Update in header, hero, about, footer
+
+Add a new portfolio project:
+  1. Open portfolio.html
+  2. Copy entire article block for a project card
+  3. Update data-project-category
+  4. Replace image URLs
+  5. Update title and description
+
+Change color scheme:
+  1. Open css/main.css
+  2. Edit :root variables (lines 1-9)
+  3. Also edit body[data-theme="light"] section
+
+Enable/disable page transitions:
+  1. Open js/main.js
+  2. Comment out the page transition code (lines 59-75)
+
+Add new page:
+  1. Copy index.html (or any page) as template
+  2. Rename to new-page.html
+  3. Update page content
+  4. Add nav link in <nav> element
+  5. Update title and meta description
+
+================================================================================
+11. BEST PRACTICES
+================================================================================
+
+- Always test theme toggle (dark/light mode)
+- Verify all internal links work after navigation
+- Test contact form validation with various inputs
+- Check mobile responsiveness on devices (not just browser zoom)
+- Test keyboard navigation (Tab through all elements)
+- Validate portfolio filter by testing each category
+- Test before/after toggles on portfolio page
+- Optimize images before uploading (reduce file size)
+- Use modern image formats (WebP) when possible
+- Keep alt text descriptive for accessibility
+- Test in multiple browsers before deployment
+
+================================================================================
+12. SUPPORT & RESOURCES
+================================================================================
+
+CSS Grid/Flexbox:
+  https://css-tricks.com/
+
+Responsive Design:
+  https://web.dev/responsive-web-design-basics/
+
+JavaScript Events:
+  https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+Web Accessibility:
+  https://www.w3.org/WAI/WCAG21/quickref/
+
+Color Accessibility:
+  https://webaim.org/articles/contrast/
+
+================================================================================
+
+Last Updated: May 3, 2026
+Portfolio Version: 1.0
+Built with: HTML5, CSS3, Vanilla JavaScript
+
+For questions or customization help, refer to the code comments or 
+consult the README.md file included in the project.
+
+================================================================================
