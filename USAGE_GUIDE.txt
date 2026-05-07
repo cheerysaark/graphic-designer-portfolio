@@ -54,6 +54,7 @@ graphic-designer-portfolio/
 │
 ├── js/
 │   ├── main.js               # Global interactions: theme toggle, nav, page transitions
+│   ├── site-content.js       # Edit this file to update portfolio images and contact services
 │   ├── portfolio.js          # Portfolio filtering and before/after compare toggle
 │   └── contact.js            # Contact form validation
 │
@@ -150,6 +151,46 @@ F) LOGO/BRANDING
    - Social links text
 
    To change branding name: Search "Visual Craft" in all files
+
+G) NO-CODE CONTENT UPDATES (RECOMMENDED)
+  Location: js/site-content.js
+
+  You can now update key content from one file only:
+  - portfolioImages: controls all images shown in portfolio page
+  - contactServices: controls options in "What are you looking for?" dropdown
+
+  To add a new portfolio image:
+  1. Upload your image file to the repo (for example assets/images/your-image.jpg)
+  2. Open js/site-content.js
+  3. Add a new item inside portfolioImages:
+    {
+      src: "assets/images/your-image.jpg",
+      alt: "Your image description"
+    }
+
+  To add a new service option:
+  1. Open js/site-content.js
+  2. Add a new text value inside contactServices list
+
+  Important for live website visibility:
+  - Changes appear to visitors only after commit + push to GitHub
+  - If using GitHub web editor, click Commit changes directly there
+  - GitHub Pages may take 1-3 minutes to publish updates
+
+H) ADMIN EDITOR (LOCAL ONLY)
+
+An admin editor page is available at `/admin.html` (not linked from the site).
+- Purpose: edit `js/site-content.js` from your browser and download the updated file for committing.
+- Protection: The admin page is protected by a password stored locally in your browser (not a server-side auth). Keep the password private.
+
+How to use:
+1. Open `admin.html` in your browser (e.g., https://your-site/admin.html or file:///.../admin.html locally).
+2. Create a password the first time (stored in browser localStorage).
+3. Unlock the editor and change `portfolioImages` and `contactServices` JSON.
+4. Click `Download site-content.js` and commit the downloaded file to your repo (or copy-paste into GitHub web editor).
+
+Security note:
+- This admin page provides convenience for local editing only. It does not implement server-side authentication and is not safe to expose publicly on an unsecured host.
 
 ================================================================================
 5. FEATURES OVERVIEW

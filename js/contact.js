@@ -1,7 +1,26 @@
 ﻿(function () {
   const form = document.querySelector("[data-contact-form]");
   const note = document.querySelector("[data-form-note]");
+  const serviceSelect = document.querySelector("#service");
+  const siteContent = window.siteContent || {};
+  const contactServices = Array.isArray(siteContent.contactServices) ? siteContent.contactServices : [];
   const whatsappNumber = "94703771851";
+
+  if (serviceSelect && contactServices.length) {
+    const placeholder = serviceSelect.querySelector('option[value=""]');
+    serviceSelect.innerHTML = "";
+    if (placeholder) {
+      serviceSelect.appendChild(placeholder);
+    }
+
+    contactServices.forEach(function (service) {
+      const option = document.createElement("option");
+      option.value = service;
+      option.textContent = service;
+      serviceSelect.appendChild(option);
+    });
+  }
+
   if (!form || !note) {
     return;
   }

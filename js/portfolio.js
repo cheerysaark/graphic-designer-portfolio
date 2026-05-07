@@ -1,4 +1,28 @@
 (function () {
+  const grid = document.querySelector("[data-works-grid]");
+  const siteContent = window.siteContent || {};
+  const portfolioImages = Array.isArray(siteContent.portfolioImages) ? siteContent.portfolioImages : [];
+
+  if (grid) {
+    const cards = portfolioImages
+      .filter(function (item) {
+        return item && item.src;
+      })
+      .map(function (item) {
+        const alt = item.alt || "Portfolio preview";
+        return (
+          '<article class="work-item">' +
+          '<img src="' + item.src + '" alt="' + alt + '" loading="lazy" />' +
+          "</article>"
+        );
+      })
+      .join("");
+
+    if (cards) {
+      grid.innerHTML = cards;
+    }
+  }
+
   const toolbar = document.querySelector("[data-filter-toolbar]");
   const cards = Array.from(document.querySelectorAll("[data-project-category]"));
   if (!toolbar || !cards.length) {
